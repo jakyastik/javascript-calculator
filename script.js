@@ -14,7 +14,6 @@ function divide(firstNum, lastNum) {
 	return firstNum / lastNum;
 }
 
-let stream = [];
 let firstNumArray = [];
 let lastNumArray = [];
 let firstNum = 0;
@@ -25,6 +24,7 @@ let inputBox;
 
 let numberButton = document.querySelectorAll(".numberButton");
 let displayDiv = document.querySelector(".displayDiv");
+let referenceDiv = document.querySelector(".referenceDiv");
 
 numberButton.forEach((numberButton) => {
 	numberButton.addEventListener("click", (event) => {
@@ -34,12 +34,10 @@ numberButton.forEach((numberButton) => {
 			lastNumArray.push(pressedValue);
 			lastNum = lastNumArray.join("");
 			displayDiv.innerHTML = lastNum;
-			console.log("Last num is ", lastNum);
 		} else {
 			firstNumArray.push(pressedValue);
 			firstNum = firstNumArray.join("");
 			displayDiv.innerHTML = firstNum;
-			console.log("First num is ", firstNum);
 		}
 	});
 });
@@ -50,32 +48,23 @@ operatorButton.forEach((operatorButton) => {
 	operatorButton.addEventListener("click", (event) => {
 		let pressedValue = event.target.value;
 		operator = pressedValue;
+		console.log(operator);
 		displayDiv.innerHTML = operator;
 
 		let toFirstNum = Number(firstNum);
 		let toLastNum = Number(lastNum);
 
-		if ((firstNum, lastNum)) {
-			if (operator == "+") {
-				result = add(toFirstNum, toLastNum);
-			} else if (operator == "-") {
-				result = substract(toFirstNum, toLastNum);
-			} else if (operator == "*") {
-				result = multiply(toFirstNum, toLastNum);
-			} else if (operator == "/") {
-				result = divide(toFirstNum, toLastNum);
-			}
-		} else if (firstNum == 0 || lastNum == 0) {
-			if (operator == "+") {
-				result = add(toFirstNum, toLastNum);
-			} else if (operator == "-") {
-				result = substract(toFirstNum, toLastNum);
-			} else if (operator == "*") {
-				result = multiply(toFirstNum, toLastNum);
-			} else if (operator == "/") {
-				result = divide(toFirstNum, toLastNum);
-			}
+		if (operator == "+") {
+			result = add(toFirstNum, toLastNum);
+		} else if (operator == "-") {
+			result = substract(toFirstNum, toLastNum);
+		} else if (operator == "*") {
+			result = multiply(toFirstNum, toLastNum);
+		} else if (operator == "/") {
+			result = divide(toFirstNum, toLastNum);
 		}
+
+		displayDiv.innerHTML = result;
 	});
 });
 
