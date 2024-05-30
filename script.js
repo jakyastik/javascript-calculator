@@ -16,6 +16,7 @@ function divide(firstNum, lastNum) {
 
 let firstNumArray = [];
 let lastNumArray = [];
+let stream = [];
 let firstNum = 0;
 let lastNum = 0;
 let operator;
@@ -48,7 +49,6 @@ operatorButton.forEach((operatorButton) => {
 	operatorButton.addEventListener("click", (event) => {
 		let pressedValue = event.target.value;
 		operator = pressedValue;
-		console.log(operator);
 		displayDiv.innerHTML = operator;
 
 		let toFirstNum = Number(firstNum);
@@ -64,7 +64,7 @@ operatorButton.forEach((operatorButton) => {
 			result = divide(toFirstNum, toLastNum);
 		}
 
-		displayDiv.innerHTML = result;
+		displayDiv.innerHTML = operator;
 	});
 });
 
@@ -101,3 +101,84 @@ function clearDiv() {
 	operator = "";
 	console.clear();
 }
+
+
+
+// ---------------------------------------------------------------------------------------
+
+// let numberButton = document.querySelectorAll(".numberButton");
+// let operatorButton = document.querySelectorAll(".opButton");
+// let displayDiv = document.querySelector(".displayDiv");
+
+// let numString = [];
+// let fullString = []
+// let stream = [];
+// let result;
+// let operator;
+
+
+// numberButton.forEach((numberButton) => {
+//     numberButton.addEventListener("click", (event) => {
+//          let pressedValue = event.target.value;
+//          numString.push(Number(pressedValue));
+//          displayDiv.innerHTML = numString.join("");
+//     });
+// }, 0)
+
+// operatorButton.forEach((operatorButton) => {
+//     operatorButton.addEventListener("click", (event) => {
+//         let pressedValue = event.target.value;
+//         operator = pressedValue;
+//         displayDiv.innerHTML = operator;
+
+//         let fullString = numString.join("");
+//         addtoStream(fullString);
+//         addtoStream(operator);
+//         numString = [];
+//         console.log(stream);
+
+//         displayResult();
+        
+//     })
+// })
+
+// function addtoStream(x) {
+//     stream.push(x);
+// }
+
+// function displayResult () {
+//     if (stream) {
+//         let joinStream = stream.join("");
+//     }
+// }
+
+//--------------------------------------------------------------------------------------------------------
+
+// let firstNum = 0;
+// let lastNum = 0;
+// let operator;
+
+
+// let numberButton = document.querySelectorAll(".numberButton");
+// let operatorButton = document.querySelectorAll(".opButton");
+// let displayDiv = document.querySelector(".displayDiv");
+// let resultButton = document.querySelector(".resultButton");
+
+// numberButton.forEach((numberButton) => {
+//     numberButton.addEventListener("click", (event) =>{
+//         let pressedValue = event.target.value;
+//         let arrayfromPressed = [];
+//         arrayfromPressed.push(pressedValue);
+//         let joinedArray = arrayfromPressed.join("");
+        
+//         if (operator) {
+//             lastNum = joinedArray;
+//             firstNum = firstNum; 
+//         } else {
+//             firstNum = joinedArray;
+//             lastNum =
+//         }
+
+//         console.log(firstNum, lastNum);
+//     })
+// })
